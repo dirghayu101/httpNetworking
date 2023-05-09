@@ -1,0 +1,46 @@
+Now a version 4 IP address has 4 octets, each octet ranging from 0 to 255.
+
+This give us a total of 4 billion possible unique combination. The problem is, there are many more devices than that. 4 billion are not not sufficient for every device on earth.
+
+So we have these things DHCP, NAT and subnet masking. These things help us in solving this problem.
+
+Subnet masking concept is like this. Give one router a unique IP address. Then that router will have its own private addresses.
+
+Like let's say, you have this IP address 10.45.18.23 for a router. It's unique, now all the devices connected to this will have their own private IP address.
+
+123.1.14.0, 123.1.14.1, 123.1.14.2, 123.1.14.3, etc, etc. 
+
+There are three classes of subnet masks:
+Class A, Class B and Class C. 
+
+They are shown like this: 255.255.255.0 for a class C one, 255.255.0.0 for a class B one and 255.0.0.0 for a class A one.
+
+What does it mean is, the first two digits will stay the same while the rest can change. 
+
+Like in case of 255.255.255.0 the starting three octets in the private network will all be the same, while the last octet will differ among devices.
+The same goes for Class A and Class B.
+
+This process of division in a private network is called subnet masking.
+
+Now for a router, there is a broadcast IP, a default IP and a reserved IP.
+
+A broadcast IP will send whatever packet it receive to every other device connected to the network. 
+
+The default IP is used to communicate with IPs outside your private network. Let's say you want to search google.com, and the IP of it obviously is not in your private network.
+
+Then you will send it to default network, which will send it to your ISP and so on. Once a response is received back from google.com, your router will send the response back to you.
+
+A reserved IP is just a reserved IP. Like the first one is not allocated to any device.
+
+Why do we need to have a reserved IP address?
+
+Reserved IP addresses are set aside for special purposes and not assigned to any device on a network. 
+
+Here are a few reasons why we need to have reserved IP addresses:
+
+-> Private addressing: Reserved IP addresses are used for private addressing, which allows devices on a private network to communicate with each other using private IP addresses that are not publicly routable on the internet.
+
+-> Network infrastructure: Some reserved IP addresses are reserved for network infrastructure devices, such as routers, switches, and servers, to ensure that these devices have fixed and predictable IP addresses that can be easily managed.
+
+-> Testing and experimentation: Reserved IP addresses can also be used for testing and experimentation, where developers and network engineers can use them without worrying about conflicts with existing IP addresses on the network.
+
